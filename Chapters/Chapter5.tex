@@ -4,6 +4,8 @@
 
 \label{Chapter5} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
+En este capítulo se presentan los aspectos más relevantes del trabajo realizado y
+se mencionan los pasos a seguir.
 
 %----------------------------------------------------------------------------------------
 
@@ -11,18 +13,31 @@
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{Conclusiones generales }
+\section{Trabajo realizado}
 
-La idea de esta sección es resaltar cuáles son los principales aportes del trabajo realizado y cómo se podría continuar. Debe ser especialmente breve y concisa. Es buena idea usar un listado para enumerar los logros obtenidos.
-
-Algunas preguntas que pueden servir para completar este capítulo:
+Se desarrolló e implementó un sistema de gestión de dispositivos conversores de protocolo Modbus a MQTT conectados a sensores de temperatura, que demostró ser útil para el análisis de su comportamiento frente a las variaciones diarias de uso y aplicación.  A continuación se listan los logros destacados del trabajo final:
 
 \begin{itemize}
-\item ¿Cuál es el grado de cumplimiento de los requerimientos?
-\item ¿Cuán fielmente se puedo seguir la planificación original (cronograma incluido)?
-\item ¿Se manifestó algunos de los riesgos identificados en la planificación? ¿Fue efectivo el plan de mitigación? ¿Se debió aplicar alguna otra acción no contemplada previamente?
-\item Si se debieron hacer modificaciones a lo planificado ¿Cuáles fueron las causas y los efectos?
-\item ¿Qué técnicas resultaron útiles para el desarrollo del proyecto y cuáles no tanto?
+	\item Programación de servidor de datos para vinculación de dispositivos conversores.
+	\item Implementación de certificados SSL para dotar de seguridad a todo el sistema.
+	\item Desarrollo de base de datos para el almacenamiento histórico de datos enviados para su posterior análisis. 
+	\item Implementación de aplicación web para visualización, análisis y control de datos enviados por diferentes dispositivos conversores.
+	\item Integración en la nube del sistema de gestión. 
+\end{itemize}
+
+El grado de cumplimiento de los requerimientos fue como se tenia previsto durante la planificación, ya que se pudo lograr integrar el sistema e instalarlo en un servidor remoto para realizar pruebas con clientes que se encuentran testeando los dispositivos conversores de protocolo Modbus a MQTT conectados a sensores de temperatura para el monitoreo del funcionamiento de cámaras frigoríficas.
+
+Fue necesario contratar un servicio de servidor en la nube dedicado a desarrollo y no recomendado para producción y un servicio de hosting web para poder realizar las pruebas de forma remota para que diferentes personas puedan probar el sistema. Esto llevó a un pequeño atraso en el desarrollo ya que se debió estudiar nuevos conceptos de programación y configuración de estos servicios. 
+
+Durante el desarrollo de este trabajo final, se aplicaron conocimiento adquiridos a lo largo de todo el año de la Especialización en Internet de las Cosas. Todas las asignaturas cursadas aportaron conocimientos necesarios y experiencia para la práctica profesional en el área del desarrollo web.  Sin embargo, se resaltan a continuación aquellas materias de mayor relevancia para este trabajo:
+
+\begin{itemize}
+	\item Gestión de Proyectos: la elaboración de un Plan de Proyecto para organizar el Trabajo Final, facilito la realización del mismo y evitó demoras innecesarias. 
+	\item Protocolos de Internet: se aplicaron conceptos aprendidos para la programación del servidor con los protocolos MQTT y HTTP.
+	\item Desarrollo de aplicaciones multiplataforma: se adquirieron conocimientos de programación para la plataforma web adaptable a cualquier dispositivo que pueda ejecutar un navegador web.
+	\item Arquitectura de datos: se desarrolló la base de datos teniendo en cuenta las especificaciones y técnicas aprendidas. 
+	\item Ciberseguridad en IoT: se utilizaron técnicas de seguridad para proteger al sistema frente a posible ataques cibernéticos. 
+	\item Testing de Sistemas de Internet de las Cosas: se aplicaron los conocimientos adquiridos durante la materia, sobre todo en las áreas de testing unitarios y ensayos de integración del sistema.
 \end{itemize}
 
 
@@ -31,4 +46,11 @@ Algunas preguntas que pueden servir para completar este capítulo:
 %----------------------------------------------------------------------------------------
 \section{Próximos pasos}
 
-Acá se indica cómo se podría continuar el trabajo más adelante.
+Resulta imprescindible identificar el trabajo futuro, para dar continuidad al esfuerzo realizado hasta el momento y poder realizar un sistema comercialmente atractivo. A continuación se listan las líneas de trabajo más trascendentes:
+
+\begin{itemize}
+	\item Desarrollo de notificaciones y alertas al usuario ante posible eventos configurables.
+	\item Lectura de dispositivos que no pertenezcan a la medición de temperatura.
+	\item Agregar un nivel de gestión de organizaciones para permitir a un usuario ser parte devarias de ellas. 
+	\item Contratación de un servicio de servidor remoto de produccion para asegurar la disponibilidad, integridad y utilización de recursos del software implementado.
+\end{itemize}
