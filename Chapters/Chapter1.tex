@@ -25,9 +25,9 @@ En este capítulo se realiza una introducción al protocolo Modbus y la vinculac
 %----------------------------------------------------------------------------------------
 \section{Comunicación Modbus y supervisión SCADA}
 
-Gracias al desarrollo e innovación de nuevas tecnologías, la automatización de procesos industriales, a través del tiempo, ha dado lugar a avances significativos que le han permitido a industrias implementar procesos de producción eficientes, seguros y competitivos.
+Gracias al desarrollo e innovación de nuevas tecnología y a la automatización de procesos industriales a través del tiempo, se ha dado lugar a avances significativos que le han permitido a industrias implementar procesos de producción eficientes, seguros y competitivos.
 
-Actualmente en el sector industrial es muy utilizado el PLC (\textit{Programmable Logic Controller}) \citep{WEBSITE:1} para controlar máquinas, lineas de producción y en general todo lo relacionado con el proceso propio de la industria y debido a la necesidad de comunicar equipos, sensores y actuadores, la empresa Modicon crea en el año 1979, el protocolo de comunicación Modbus \citep{WEBSITE:2}. 
+Actualmente en el sector industrial es muy utilizado el PLC (\textit{Programmable Logic Controller}) \citep{WEBSITE:1} para controlar máquinas, lineas de producción y en general todo lo relacionado con el proceso propio de la industria y, para que esto sea posible, los equipos, sensores y actuadores deben comunicarse entre si. Con este fin se utiliza, entre otros, el protocolo de comunicacion Modbus  \citep{WEBSITE:2}, introducio por la empresa Modicon en 1979. 
 
 Modbus permite conectar un dispositivo servidor con varios dispositivos clientes.  Existen dos versiones de implementación:
 \begin{itemize}
@@ -103,7 +103,7 @@ En la figura \ref{fig:wincc-siemens} se puede observar la implementación de un 
 
 Por lo general, el término Internet de las cosas (IoT) se refiere a escenarios en los que la conectividad de red y la capacidad de cómputo se extienden a objetos, sensores y artículos de uso diario que habitualmente no se consideran computadoras, permitiendo que estos dispositivos generen, intercambien y consuman datos con una mínima intervención humana.  
 
-El concepto de combinar computadoras, sensores y redes para monitorear y controlar diferentes dispositivos ha existido durante décadas. Sin embargo, la reciente confluencia de diferentes tendencias del mercado tecnológico está permitiendo que la internet de las cosas esté cada vez más cerca de ser una realidad generalizada.  
+El concepto de combinar computadoras, sensores y redes para monitorear y controlar diferentes dispositivos ha existido durante décadas. Sin embargo, la reciente confluencia de diferentes tendencias del mercado tecnológico está permitiendo que la internet de las cosas esté cada vez más cerca de ser una realidad generalizada.   
 
 Estas tendencias incluyen la conectividad omnipresente, la adopción generalizada de redes basadas en el protocolo IP \citep{WEBSITE:9}, la economía en la capacidad de cómputo, la minimización, los avances en el análisis de datos y el surgimiento de la computación en la nube.
 
@@ -129,7 +129,7 @@ La irrupción de la Internet de las cosas en la industria, tiene como objetivo c
 	\item Comunicación Hombre – Máquina, notificaciones de alarmas, visualización de datos en tiempo real mediante \textit{wearables}.
 \end{itemize}
 
-La importancia de la internet de las cosas en el mundo de las empresas y las personas, queda reflejado en el crecimiento exponencial de dispositivos IoT conectados en el mundo, como se visualiza en la figura  \ref{fig:iot-crecimiento}. Para este año, se prevé que cerca de 36 mil millones de dispositivos IoT se encuentren en funcionamiento en el mundo, cifra que se extiende hasta los más de 75 mil millones para el año 2025.
+La importancia de la internet de las cosas en el mundo de las empresas y las personas queda reflejado en el crecimiento exponencial de dispositivos IoT conectados en el mundo, como se visualiza en la figura  \ref{fig:iot-crecimiento}. Para este año, se prevé que cerca de 36 mil millones de dispositivos IoT se encuentren en funcionamiento en el mundo, cifra que se extiende hasta los más de 75 mil millones para el año 2025.
 
 \begin{figure}[htpb]
 	\centering
@@ -182,9 +182,9 @@ Las principales desventajas de estas plataformas son la fuerte dependencia que g
 
 En la actualidad existen múltiples dispositivos conversores de protocolos que permiten enviar datos a la nube, pero la mayoría no posee un sistema de gestión a través de una plataforma web. La metodología de conexión es a través de la vinculación con servicios web como los mencionados en la sección \ref{sec:estado-arte} donde el usuario deberá encargarse de realizar todo el desarrollo de la visualización de datos en forma clara, el almacenamiento de datos en una base de datos y la generación de eventos que puedan serle útil. 
 
-Empresas multinacionales como ser ABB, Scheider Electric, Honeywell o Siemens,  poseen sus propias plataformas web de gestión y protocolos de comunicación, lo que genera un sistema cerrado y dependiente de un determinado fabricante de dispositivos, por lo que imposibilita la conexión de conversores de otras marcas. 
+Empresas multinacionales como ser ABB, Scheider Electric, Honeywell o Siemens poseen sus propias plataformas web de gestión y protocolos de comunicación, lo que genera un sistema cerrado y dependiente de un determinado fabricante de dispositivos. Por lo antes mencionado, se hace inviable la conexión de conversores de otras marcas. 
 
-Por estos motivos antes mencionados, surgió la posibilidad de ofrecer un servicio de gestión web, que contenga todos los componentes necesarios para que el usuario solo requiera de una configuración básica de conexión al servidor y en un breve periodo de tiempo, pueda visualizar los datos requeridos de forma remota, pudiendo generar reportes y almacenamiento de datos. 
+Por estos motivos, surgió la posibilidad de ofrecer un servicio de gestión web. Que contenga todos los componentes necesarios para que el usuario solo requiera de una configuración básica de conexión al servidor.  Que pueda visualizar los datos requeridos de forma remota, pudiendo generar reportes y almacenamiento de datos en breve periodo de tiempo de utilización. 
 
 %----------------------------------------------------------------------------------------
 
@@ -195,7 +195,7 @@ Por estos motivos antes mencionados, surgió la posibilidad de ofrecer un servic
 
 \subsection{Objetivos}
 
-El propósito de este proyecto,  es el desarrollo de un sistema que contenga un servidor MQTT, una base de datos para alojar información de reportes de dispositivos y una plataforma web que permita visualizar de forma remota datos enviados de diferentes sensores que contengan instalado un conversor de protocolo Modbus a MQTT.  Esto permitirá maximizar la eficiencia del proceso, ya que puede ser monitoreado en tiempo real desde cualquier parte del mundo, contando con avisos de alarmas, reportes históricos y almacenamiento de datos. 
+El propósito de este trabajo fué el desarrollo de un sistema que contenga un servidor MQTT, una base de datos para alojar información de reportes de dispositivos y una plataforma web que permita visualizar de forma remota datos enviados de diferentes sensores que contengan instalado un conversor de protocolo Modbus a MQTT.  Esto permite maximizar la eficiencia del proceso, ya que puede ser monitoreado en tiempo real desde cualquier parte del mundo, contando con avisos de alarmas, reportes históricos y almacenamiento de datos. 
 
 \subsection{Alcance}
 
