@@ -56,7 +56,7 @@ Las funciones implementadas en el backend se conectan a una base de datos remota
 	\label{fig:esquema-general}
 \end{figure}
  
-En el servidor se desarrolló el frontend en Angular mientras que el backend consta de dos módulos. Por un lado el modulo de API de clientes que fue desarrollado en Node.js y contiene la implementación de funciones para interactuar con la base de datos y la creación de usuarios, dispositivos y visualización de configuración.  Además el backend consta de un módulo cliente MQTT que se encarga de interactuar entre el broker y los dispositivos conectados a él. Es el encargado de gestionar la información que envían los dispositivos hacia la base de datos para luego ser utilizados por el frontend. 
+En el servidor se desarrolló el frontend en Angular mientras que el backend consta de dos módulos. Por un lado el modulo de API de clientes que fue desarrollado en Node.js y contiene la implementación de funciones para interactuar con la base de datos y la creación de usuarios, dispositivos y visualización de configuración.  Además, el backend consta de un módulo cliente MQTT que se encarga de interactuar entre el broker y los dispositivos conectados a él. Es el encargado de gestionar la información que envían los dispositivos hacia la base de datos para luego ser utilizados por el frontend. 
 
 Todo el servidor es gestionado por Nginx, el cual actúa como proxy inverso lo que permite un único canal de comunicación entre usuarios y sistema.  Por último, la base de datos se encuentra en un servidor remoto y se accede a ella mediante credenciales de conexión. 
  
@@ -65,7 +65,7 @@ Todo el servidor es gestionado por Nginx, el cual actúa como proxy inverso lo q
 \label{backend-sec}
 El backend del trabajo realizado está divido en diferentes bloques de funcionamiento. 
 
-El bloque de backend de funciones API de clientes que se observa en la figura \ref{fig:backend-clientes} donde su conexión con el punto de entrada al servidor gestionado por Nginx es el puerto 8000.  Por otro lado, este bloque se conecta con la base de datos remota MongoDB Atlas \citep{WEBSITE:35} para almacenar datos de nuevos usuarios, dispositivos,configuración de dispositivos, organizaciones y relaciones entre usuarios y organizaciones.  Los clientes que acceden a cualquier función de este bloque lo harán a través de un puerto seguro, dotado de certificados SSL que es manejado por Nginx y mapeado al puerto 8000.
+El bloque de backend de funciones API de clientes que se observa en la figura \ref{fig:backend-clientes} donde su conexión con el punto de entrada al servidor gestionado por Nginx es el puerto 8000.  Por otro lado, este bloque se conecta con la base de datos remota MongoDB Atlas \citep{WEBSITE:35} para almacenar datos de nuevos usuarios, dispositivos, configuración de dispositivos, organizaciones y relaciones entre usuarios y organizaciones.  Los clientes que acceden a cualquier función de este bloque lo harán a través de un puerto seguro, dotado de certificados SSL que es manejado por Nginx y mapeado al puerto 8000.
 
 \begin{figure}[htpb]
 	\centering
@@ -235,7 +235,7 @@ client.on('message', function(topic, message, packet) {
 
 Para el manejo de la base de datos, Mongoose requiere que se creen \textit{Schemas} de cada uno de los modelos que intervienen en este trabajo. 
 
-Para la implementación del modelo de usuario se realizo un estudio de los campos requeridos por el cliente que requiere el registro y acceso al sistema. El código  \ref{cod:user-model}  muestra esta definición en conjunto con sentencias para validar información del modelo.
+Para la implementación del modelo de usuario se realizó un estudio de los campos que serán utilizados por el cliente para el registro y acceso al sistema. El código  \ref{cod:user-model}  muestra esta definición en conjunto con sentencias para validar información del modelo.
 
 \begin{lstlisting}[label=cod:user-model,caption=Definición de Schema para el modelo de usuario.] 
 
@@ -277,7 +277,7 @@ module.exports = mongoose.model('Usuario', usuarioSchema);
 
 \end{lstlisting}
 
-Para el resto de los modelos utilizados en el trabajo, el procedimiento adoptado es similar al del código \ref{cod:user-model}. En la figura \ref{fig:modelos-mongo} se muestran los modelos mas utilizados en este trabajo para realizar operaciones con la base de datos. 
+Para el resto de los modelos utilizados en el trabajo, el procedimiento adoptado es similar al del código \ref{cod:user-model}. En la figura \ref{fig:modelos-mongo} se muestran los modelos más utilizados en este trabajo para realizar operaciones con la base de datos. 
 
 \begin{figure}[htpb]
 	\centering
@@ -351,13 +351,13 @@ const actualizarUsuario = async (req, res = response) => {
 \end{lstlisting}
 
 
-Para la implementación del CRUD de organizaciones y dispositivos, se utilizó el mismo concepto de programación, utilizando los modelos correspondientes. 
+Para la implementación del CRUD de organizaciones y dispositivos, se empleó el mismo concepto de programación, utilizando los modelos correspondientes. 
 
 
 \subsection{Configuración del broker MQTT}
 \label{mqtt-sec}
 
-El broker MQTT utilizado para este trabajo es Mosquitto \citep{WEBSITE:39}. Es un servidor de mensajes de código abierto (con licencia EPL/EDL) que implementa las versiones 3.1 y 3.1.1 del protocolo MQTT. Es ampliamente utilizado debido a su rapidez, lo que permite, emplearlo en gran número de ambientes, incluso si éstos son de pocos recursos.En la sección \ref{mqtt-section} se explicó en detalle el uso del protocolo MQTT y se especificó el funcionamiento del broker. 
+El broker MQTT utilizado para este trabajo es Mosquitto \citep{WEBSITE:39}. Es un servidor de mensajes de código abierto (con licencia EPL/EDL) que implementa las versiones 3.1 y 3.1.1 del protocolo MQTT. Es ampliamente utilizado debido a su rapidez, lo que permite emplearlo en gran número de ambientes, incluso si éstos son de pocos recursos. En la sección \ref{mqtt-section} se explicó en detalle el uso del protocolo MQTT y se especificó el funcionamiento del broker. 
 
 La configuración de Mosquitto se realiza a través de un archivo interno que se encuentra entre los archivos de instalación del broker con el nombre de \textit{mosquitto.conf}. 
 
@@ -428,7 +428,7 @@ Una vez realizados estos pasos, el acceso al servidor sera por HTTPS y el sitio 
 Para el diseño del frontend, se tuvo en cuenta los siguientes requerimientos:
 
 \begin{itemize}
-	\item Debe ser un cliente del broker MQTT, para poder observar datos en tiempo real de los dispositivos conectados.
+	\item Debe ser un cliente del broker MQTT para poder observar datos en tiempo real de los dispositivos conectados.
 	
 	\item Debe tener funciones de consultas hacia la base de datos a través del backend. 
 	
@@ -448,14 +448,22 @@ Para la implementación se utilizó Angular como \textit{framework} de programac
 
 La estructura general de la plataforma consta de una pantalla de inicio donde el usuario puede iniciar sesión, o bien realizar un registro al sistema para luego poder ingresar al sistema. 
 
-En la figura \ref{fig:pantalla-login} se pueden observar las pantallas de registro y login implementadas. 
+En la figura \ref{fig:pantalla-login} se pueden observar la pantalla de login, mientras que la figura \ref{fig:pantalla-register} muestra la pantalla de registro de usuario. 
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.75]{./Figures/pantalla-login.png}
-	\caption[Pantalla de login y registro]{Ilustración de pantallas de login y registro de usuarios en plataforma web.}
+	\includegraphics[scale=.60]{./Figures/pantalla-login.png}
+	\caption[Pantalla de login de usuario]{Ilustración de pantalla de login de usuario en plataforma web.}
 	\label{fig:pantalla-login}
 \end{figure}
+\pagebreak
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=.60]{./Figures/pantalla-register.png}
+	\caption[Pantalla de registro de usuario]{Ilustración de pantalla de registro de usuarios en plataforma web.}
+	\label{fig:pantalla-register}
+\end{figure}
+
 
 Para la implementación en Angular, dentro de la carpeta /src se creo un componente para la pantalla de login y un componente para la pantalla de registro. En la figura \ref{fig:estructura-login} puede observarse la estructura y archivos creados para el desarrollo de las pantallas antes mencionadas. 
 
@@ -465,6 +473,8 @@ Para la implementación en Angular, dentro de la carpeta /src se creo un compone
 	\caption[Estructura de componentes de login y registro]{Ilustración de estructura creada en el desarrollo de la pantalla de login y registro.}
 	\label{fig:estructura-login}
 \end{figure}
+
+\pagebreak
 
 Los comandos de angular utilizados para crear estos componentes se pueden observar en el código \ref{cod:crear-componentes}.
 
@@ -521,9 +531,9 @@ Para la programación del componente login, se utilizó una plantilla HTML para 
 
 \end{lstlisting} 
 
-Otro aspecto importante en el desarrollo de la pantalla es la programación del comportamiento de cada campo en el que el usuario interactúa con la página. El código muestra las funciones principales que se programaron en el archivo \textit{Typescript}.
+Otro aspecto importante en el desarrollo de la pantalla es la programación del comportamiento de cada campo en el que el usuario interactúa con la página. El código \ref{cod:ts-login} muestra las funciones principales que se programaron en el archivo \textit{Typescript}.
 
-\begin{lstlisting}[label=cod:ts-login,caption=Fragmentos de código mas relevantes utilizado en el archivo \textit{Typescript} del componente login.] 
+\begin{lstlisting}[label=cod:ts-login,caption=Fragmentos de código más relevantes utilizado en el archivo \textit{Typescript} del componente login.] 
 
 // Definicion de clase LoginComponent
 export class LoginComponent {
@@ -584,9 +594,9 @@ export class LoginComponent {
 
 Otro aspecto importante del frontend es la programación de un servicio que permita conectarse con el backend y realizar peticiones HTTP. Para el caso de la pantalla de login,  se requiere acceder a la base de datos para verificar si el email y password utilizado por el usuario son correctos y así poder acceder a la pagina principal. 
 
-El código \ref{cod:service-login} muestra la implementación de un servicio que es utilizado por el componente de login de usuario. En él puede observarse un método llamado loginUsuario el cual realiza una petición POST al backend.  Luego espera una respuesta por parte de la petición para verificar si la misma es correcta.  Por otro lado se programó un método crearUsuario el cual crea un nuevo usuario en la base de datos, utilizando las funciones CRUD programadas en el backend. 
+El código \ref{cod:service-login} muestra la implementación de un servicio que es utilizado por el componente de login de usuario. En él puede observarse un método llamado loginUsuario el cual realiza una petición POST al backend.  Luego espera una respuesta por parte de la petición para verificar si la misma es correcta.  Por otro lado, se programó un método crearUsuario el cual crea un nuevo usuario en la base de datos, utilizando las funciones CRUD programadas en el backend. 
 
-\begin{lstlisting}[label=cod:service-login,caption=Fragmentos de código mas relevantes utilizados en el servicio de usuario.] 
+\begin{lstlisting}[label=cod:service-login,caption=Fragmentos de código más relevantes utilizados en el servicio de usuario.] 
 
 export class UsuarioService {
 
@@ -613,11 +623,11 @@ export class UsuarioService {
 
 \end{lstlisting} 
 
-En general, toda la implementación del frontend está basada en estas tres implementaciones de código.  La metodología adoptada fue crear componentes por cada una de las funcionalidades donde el usuario interactúa con la plataforma y a su vez la utilidad de los servicios para interactuar entre el backend y el frontend teniendo en cuenta las consultas a la base de datos. 
+En general, toda la implementación del frontend está basada en estas tres implementaciones de código.  La metodología adoptada fue crear componentes por cada una de las funcionalidades donde el usuario interactúa con la plataforma y a su vez, la utilidad de los servicios para interactuar entre el backend y el frontend teniendo en cuenta las consultas a la base de datos. 
 
-Por otro lado para observar los datos en tiempo real provenientes de los dispositivos conectados al broker MQTT, es necesario que el frontend pueda acceder y suscribirse a los tópicos a los que estos dispositivos están publicando. 
+Por otro lado, para observar los datos en tiempo real provenientes de los dispositivos conectados al broker MQTT, es necesario que el frontend pueda acceder y suscribirse a los tópicos a los que estos dispositivos están publicando. 
 
-Para ello se utiliza la librería ngx-mqtt\citep{WEBSITE:41} que permite crear un cliente MQTT a través del uso de websockets\citep{WEBSITE:42}. El código \ref{cod:mqtt-angular} muestra la forma de realizar la conexión con el broker MQTT utilizando el puerto seguro 884 descrito en la sección \ref{mqtt-sec}. Luego en cada componente que se utiliza la conexión se implementan los métodos de suscripción y publicación. 
+Para ello se utiliza la librería ngx-mqtt \citep{WEBSITE:41} que permite crear un cliente MQTT a través del uso de websockets \citep{WEBSITE:42}. El código \ref{cod:mqtt-angular} muestra la forma de realizar la conexión con el broker MQTT utilizando el puerto seguro 884 descrito en la sección \ref{mqtt-sec}. Luego en cada componente que se utiliza la conexión se implementan los métodos de suscripción y publicación. 
 
 \begin{lstlisting}[label=cod:mqtt-angular,caption=Implementación de cliente MQTT en Angular utilizando la librería ngx-mqtt.] 
 // Definicion de parametros de conexion
@@ -664,88 +674,112 @@ Cuando un usuario se registra a la plataforma, por defecto es un usuario adminis
 
 El rol operador, solo permite a los usuarios visualizar información referida a los dispositivos conectados, invalidando la posibilidad de editar, borrar o agregar dispositivos y usuarios.
 
-En la pantalla principal o también llamada \textit{dashboard}, se muestran dispositivos que se encuentran agregados al sistema por parte de un usuario administrador. Estos, son leídos desde la base de datos cuando el usuario ingresa a la plataforma y se adaptan a un modelo de sensor cargado en el sistema. En la figura \ref{fig:dashboard} se muestran dos dispositivos que hacen referencia a sensores de temperatura fabricados por la empresa D\&T que utilizan el modulo conversor Modbus a MQTT..  
 
+En la pantalla principal o también llamada \textit{dashboard}, se muestran dispositivos que se encuentran agregados al sistema por parte de un usuario administrador. Estos, son leídos desde la base de datos cuando el usuario ingresa a la plataforma y se adaptan a un modelo de sensor cargado en el sistema. En la figura \ref{fig:dashboard} se muestran dos dispositivos que hacen referencia a sensores de temperatura fabricados por la empresa D\&T que utilizan el modulo conversor Modbus a MQTT.
+\pagebreak
  \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.25]{./Figures/dashboard.png}
+	\includegraphics[scale=.7]{./Figures/dashboard.png}
 	\caption[Pantalla principal - \textit{dashboard}]{Ilustración de lista de sensores de temperatura T700 conectados a conversores Modbus a MQTT. }
 	\label{fig:dashboard}
 \end{figure}
 
 
-Cada bloque de sensor, corresponde a un componente de Angular, el cual tiene un servicio asociado para el manejo de datos en tiempo real y además la posibilidad de acceder a sus datos históricos. En la figura \ref{fig:sensor-temp} se observa en detalle las opciones de acceso implementadas en el componente.
 
+Cada bloque de sensor corresponde a un componente de Angular, el cual tiene un servicio asociado para el manejo de datos en tiempo real y además la posibilidad de acceder a sus datos históricos. En la figura \ref{fig:sensor-temp} se observa en detalle las opciones de acceso implementadas en el componente.
+\pagebreak
  \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.40]{./Figures/sensor-temp.png}
+	\includegraphics[scale=.60]{./Figures/sensor-temp.png}
 	\caption[Sensor de temperatura T700]{Ilustración de componente utilizado para modelar el sensor T700 y sus opciones de acceso.}
 	\label{fig:sensor-temp}
 \end{figure}
 
 
-Si el usuario requiere realizar cambios en el dispositivo y editar parámetros como se muestra en la figura \ref{fig:sensor-temp}, puede ingresar directamente desde el componente y sus accesos directos, o bien buscarlo en el listado de dispositivos y presionando en el botón de edición.
-
+Si el usuario requiere realizar cambios en el dispositivo y editar parámetros como se muestra en la figura \ref{fig:edicion-dev}, puede ingresar directamente desde el componente y sus accesos directos, o bien buscarlo en el listado de dispositivos y presionando en el botón de edición.
+\pagebreak
  \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.30]{./Figures/edicion-dev.png}
-	\caption[Pantalla de edición de dispositivos]{Ilustración de pantalla de edicion de dispositivos.}
+	\includegraphics[scale=.55]{./Figures/edicion-dev.png}
+	\caption[Pantalla de edición de dispositivos]{Ilustración de pantalla de edición de dispositivos.}
 	\label{fig:edicion-dev}
 \end{figure}
 
 
-Para la visualización de datos históricos de dispositivos se utilizo la librería para Angular echarts \citep{WEBSITE:43}. Esta amplia librería permite la utilización de gráficos para mostrar datos históricos de mediciones de los dispositivos que almacenan datos en MongoDB. En la figura \ref{fig:echart-grafica} puede observarse las características principales que ofrece el componente para realizar un gráfico y las opciones correspondientes.
+Para la visualización de datos históricos de dispositivos se utilizó la librería para Angular echarts \citep{WEBSITE:43}. Esta amplia librería permite la utilización de gráficos para mostrar datos históricos de mediciones de los dispositivos que almacenan datos en MongoDB. En la figura \ref{fig:echart-grafica} puede observarse las características principales que ofrece el componente para realizar un gráfico y las opciones correspondientes en la figura \ref{fig:echart-grafica-opciones}.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.30]{./Figures/echart-grafica.jpg}
-	\caption[Componente gráfico de echarts]{Ilustración de componente gráfico utilizando la librería echart y opciones de configuración.}
+	\includegraphics[scale=.60]{./Figures/echart-grafica.png}
+	\caption[Componente gráfico de echarts]{Ilustración de componente gráfico utilizando la librería echart\protect\footnotemark.}
 	\label{fig:echart-grafica}
 \end{figure}
 
-En la plataforma se implementó un gráfico de lineas con la librería echarts teniendo en cuenta datos provenientes de la base de datos como se muestra en la figura \ref{fig:device-grafica}. Los datos corresponden a un sensor de temperatura que utiliza un dispositivo conversor de datos Modbus a MQTT.
+
+\footnotetext{Fragmento de imagen tomada de \url{https://echarts.apache.org/en/tutorial.html}}
+
+
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.30]{./Figures/device-grafica.png}
+	\includegraphics[scale=.60]{./Figures/echart-grafica-options.png}
+	\caption[Opciones de configuración de echarts]{Ilustración de opciones de configuración de gráfico utilizando echarts\protect\footnotemark.}
+	\label{fig:echart-grafica-opciones}
+\end{figure}
+
+\footnotetext{Fragmento de imagen tomada de \url{https://echarts.apache.org/en/tutorial.html}}
+
+
+\newpage
+
+La figura \ref{fig:device-grafica} muestra el gráfico de mediciones históricas que corresponden a un sensor de temperatura que utiliza un dispositivo conversor de datos Modbus a MQTT.
+
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=.65]{./Figures/device-grafica.png}
 	\caption[Componente gráfico de echarts]{Ilustración de datos históricos de sensor de temperatura conectado a conversor de datos Modbus a MQTT.}
 	\label{fig:device-grafica}
 \end{figure}
 
 
-El diseño web \textit{responsive} o adaptativo es una técnica de diseño web que busca la correcta visualización de una misma página en distintos dispositivos. Desde computadoras de escritorio a tablets y móviles.  Se trata de dimensionar y colocar los elementos de la web de forma que se adapten al ancho de cada dispositivo permitiendo una correcta visualización y una mejor experiencia de usuario.  Para el diseño de la plataforma se utilizaron componentes con estilos que se adaptan a diferentes tamaños de pantallas. 
+El diseño web \textit{responsive} o adaptativo es una técnica de diseño web que busca la correcta visualización de una misma página en distintos dispositivos. Desde computadoras de escritorio a tablets y móviles.  Se trata de dimensionar y colocar los elementos de la web de forma que se adapten al ancho de cada dispositivo, permitiendo una correcta visualización y una mejor experiencia de usuario.  Para el diseño de la plataforma se utilizaron componentes con estilos que se adaptan a diferentes tamaños de pantallas. 
+
 
 En la figura \ref{fig:pantalla-pc}. se observa la visualización de la pantalla principal adaptada para pantallas que son utilizadas en PC de escritorio, se debe notar que el usuario puede visualizar el contenido completo, teniendo en cuenta la barra lateral desplegada con las opciones disponibles. 
-
+\pagebreak
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.20]{./Figures/pantalla-pc.png}
+	\includegraphics[scale=.68]{./Figures/pantalla-pc.png}
 	\caption[Pantalla adaptada a pantallas para PC]{Ilustración de pantalla principal adaptada a pantallas de PC.}
 	\label{fig:pantalla-pc}
 \end{figure}
 
-Por otro lado la figura \ref{fig:pantalla-tablet} se adapta a pantallas de tablets y que se encuentran de forma horizontal, donde se aprecia que la barra lateral se oculta y si el usuario necesita algún item deberá presionar el botón correspondiente para poder desplegarla. 
+
+
+Por otro lado la figura \ref{fig:pantalla-tablet} muestra la pantalla adaptada a tablets y que se encuentran de forma horizontal, donde se aprecia que la barra lateral se oculta y si el usuario necesita algún item deberá presionar el botón correspondiente para poder desplegarla. 
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.25]{./Figures/pantalla-tablet.png}
+	\includegraphics[scale=.55]{./Figures/pantalla-tablet.png}
 	\caption[Pantalla adaptada a tablets]{Ilustración de pantalla principal adaptada a tablets.}
 	\label{fig:pantalla-tablet}
 \end{figure}
 
-En ultima instancia, la figura \ref{fig:pantalla-celu} la pantalla para celulares adapta el listado de dispositivos a una sola columna y oculta la barra lateral para poder desplegarla a través de un botón.
+\pagebreak
+En ultima instancia, la figura \ref{fig:pantalla-celu} muestra la pantalla adaptada para celulares y se aprecia el listado de dispositivos en sola columna y la barra lateral oculta para poder desplegarla a través de un botón.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.20]{./Figures/pantalla-celu.png}
+	\includegraphics[scale=.60]{./Figures/pantalla-celu.png}
 	\caption[Pantalla adaptada a celulares]{Ilustración de pantalla principal adaptada a celulares.}
 	\label{fig:pantalla-celu}
 \end{figure}
 
-
+\newpage
 \section{Implementación y configuración de Nginx}
 
-Para la implementación de Nginx en un servidor con sistema operativo Linux como el de este trabajo,  se debe instalarlo con el comando que se muestra en el código \ref{cod:nginx-install}. 
+Para implementar Nginx en un servidor con sistema operativo Linux como el de este trabajo,  se debe instalarlo con el comando que se muestra en el código \ref{cod:nginx-install}. 
 
 \begin{lstlisting}[label=cod:nginx-install,caption=Instalación de Nginx en servidor con sistema operativo Linux.] 
 

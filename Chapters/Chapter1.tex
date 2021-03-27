@@ -25,9 +25,9 @@ En este capítulo se realiza una introducción al protocolo Modbus y la vinculac
 %----------------------------------------------------------------------------------------
 \section{Comunicación Modbus y supervisión SCADA}
 
-Gracias al desarrollo e innovación de nuevas tecnología y a la automatización de procesos industriales a través del tiempo, se ha dado lugar a avances significativos que le han permitido a industrias implementar procesos de producción eficientes, seguros y competitivos.
+Gracias al desarrollo e innovación de nuevas tecnologías y a la automatización de procesos industriales a través del tiempo, se ha dado lugar a avances significativos que le han permitido a industrias implementar procesos de producción eficientes, seguros y competitivos.
 
-Actualmente en el sector industrial es muy utilizado el PLC (\textit{Programmable Logic Controller}) \citep{WEBSITE:1} para controlar máquinas, lineas de producción y en general todo lo relacionado con el proceso propio de la industria y, para que esto sea posible, los equipos, sensores y actuadores deben comunicarse entre si. Con este fin se utiliza, entre otros, el protocolo de comunicacion Modbus  \citep{WEBSITE:2}, introducio por la empresa Modicon en 1979. 
+Actualmente en el sector industrial es muy utilizado el PLC (\textit{Programmable Logic Controller}) \citep{WEBSITE:1} para controlar máquinas, lineas de producción y en general todo lo relacionado con el proceso propio de la industria, y para que esto sea posible, los equipos, sensores y actuadores deben comunicarse entre sí. Con este fin se utiliza, entre otros, el protocolo de comunicacion Modbus  \citep{WEBSITE:2}, introducio por la empresa Modicon en 1979. 
 
 Modbus permite conectar un dispositivo servidor con varios dispositivos clientes.  Existen dos versiones de implementación:
 \begin{itemize}
@@ -35,7 +35,11 @@ Modbus permite conectar un dispositivo servidor con varios dispositivos clientes
 	\item Interfaz Ethernet llamada Modbus TCP.
 \end{itemize}
 
-Modbus es un protocolo de mensajería de capa de aplicación, posicionado en el nivel 7 del modelo OSI \citep{WEBSITE:3}.  La comunicación está basada en un protocolo de solicitud / respuesta,  donde es siempre iniciada por el servidor y,  por lo tanto, los clientes nunca transmitirán datos sin una solicitud previa.  
+%Modbus es un protocolo de mensajería de capa de aplicación, posicionado en el nivel 7 del modelo OSI \citep{WEBSITE:3}.  La comunicación está basada en un %protocolo de solicitud / respuesta,  donde es siempre iniciada por el servidor y,  por lo tanto, los clientes nunca transmitirán datos sin una solicitud previa.  
+
+
+Modbus es un protocolo de mensajería de capa de aplicación, posicionado en el nivel 7 del modelo OSI \citep{WEBSITE:3}. Proporciona comunicación cliente / servidor entre dispositivos conectados en diferentes tipos de buses o redes. Es un protocolo de solicitud / respuesta en el cuál el servidor realiza consultas de datos a un cliente de la red.
+
 
 Las solicitudes desde el nodo servidor a los clientes pueden ser realizados en dos modos:
 \begin{itemize}
@@ -47,7 +51,7 @@ Este protocolo permite comunicarse de manera sencilla con todo tipo de arquitect
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.35]{./Figures/red-modbus.png}
+	\includegraphics[scale=.48]{./Figures/red-modbus.png}
 	\caption[Arquitectura de red Modbus.]{Ilustración de diferentes arquitecturas de red utilizando el protocolo Modbus\protect\footnotemark.}
 	\label{fig:red-modbus}
 \end{figure}
@@ -120,7 +124,7 @@ Las implementaciones de la IoT utilizan diferentes modelos de conectividad, cada
 
 Estos modelos destacan la flexibilidad en las formas en que los dispositivos de la IoT pueden conectarse y proporcionar un valor para el usuario.
 
-La irrupción de la Internet de las cosas en la industria, tiene como objetivo conseguir una apertura total en la conectividad, es decir, la interconexión de todos los agentes que intervienen en la cadena del proceso productivo. Los dispositivos IoT serán capaces de capturar y analizar los datos obtenidos para tomar decisiones en tiempo real o enviarlos a la nube para almacenarlos y analizarlos mediante técnicas de \textit{big data}  e inteligencia artificial. Los empleos mas comunes en la industria pueden ser:
+La irrupción de la Internet de las cosas en la industria, tiene como objetivo conseguir una apertura total en la conectividad, es decir, la interconexión de todos los agentes que intervienen en la cadena del proceso productivo. Los dispositivos IoT serán capaces de capturar y analizar los datos obtenidos para tomar decisiones en tiempo real o enviarlos a la nube para almacenarlos y analizarlos mediante técnicas de \textit{big data}  e inteligencia artificial. Los empleos más comunes en la industria pueden ser:
 \begin{itemize}
 	\item Obtención de valores de parámetros físicos y actuación sobre máquinas.
 	\item Toma de datos para mantenimiento predictivo. 
@@ -129,7 +133,7 @@ La irrupción de la Internet de las cosas en la industria, tiene como objetivo c
 	\item Comunicación Hombre – Máquina, notificaciones de alarmas, visualización de datos en tiempo real mediante \textit{wearables}.
 \end{itemize}
 
-La importancia de la internet de las cosas en el mundo de las empresas y las personas queda reflejado en el crecimiento exponencial de dispositivos IoT conectados en el mundo, como se visualiza en la figura  \ref{fig:iot-crecimiento}. Para este año, se prevé que cerca de 36 mil millones de dispositivos IoT se encuentren en funcionamiento en el mundo, cifra que se extiende hasta los más de 75 mil millones para el año 2025.
+La importancia de la internet de las cosas en el mundo de las empresas y las personas queda reflejada en el crecimiento exponencial de dispositivos IoT conectados en el mundo, como se visualiza en la figura  \ref{fig:iot-crecimiento}. Para este año, se prevé que cerca de 36 mil millones de dispositivos IoT se encuentren en funcionamiento en el mundo, cifra que se extiende hasta los más de 75 mil millones para el año 2025.
 
 \begin{figure}[htpb]
 	\centering
@@ -147,7 +151,7 @@ La importancia de la internet de las cosas en el mundo de las empresas y las per
 %----------------------------------------------------------------------------------------
 \section{Estado del arte}
 \label{sec:estado-arte}
-En la actualidad existen varias plataformas cloud que brindan un conjunto de servicios de computación en la nube para hacer frente a las necesidades del negocio en lo que respecta al desarrollo de aplicaciones, almacenamiento y cómputo. 
+En la actualidad existen varias plataformas \textit{cloud} que brindan un conjunto de servicios de computación en la nube para hacer frente a las necesidades del negocio en lo que respecta al desarrollo de aplicaciones, almacenamiento y cómputo. 
 
 Algunas de las que se encuentran consolidadas a nivel mundial son: Google, Microsoft, Amazon, Samsung, entre otras \citep{WEBSITE:6}.  Estos sistemas, si bien tienen toda la infraestructura realizada para conectar dispositivos IoT, requieren de desarrollo web que implica la programación de toda la estructura de la información que se requiere enviar a la nube.  Por otro lado,  no todas las empresas implementan como protocolo de aplicación a MQTT \citep{WEBSITE:7}.  Se resumen algunos servicios ofrecidos por estas empresas en la tabla \ref{tab:cloud-emp}.
 
@@ -171,7 +175,7 @@ Algunas de las que se encuentran consolidadas a nivel mundial son: Google, Micro
 
 En cuanto a plataformas que ofrecen la etapa de procesamiento, análisis y visualización de datos, se pueden mencionar algunas como ThingBoard, Ubidots, NodeRed, entre otras. Estas plataformas asumen que el cliente cuenta con el hardware necesario para enviarles la información relevante, y ellas se encargan de analizarla y presentarla de manera conveniente mediante tableros o dashboards, que le permiten al usuario ver el estado e históricos de sensores, actuadores y nodos. 
 
-Las principales desventajas de estas plataformas son la fuerte dependencia que generan y la poca adaptabilidad al hardware que se requiere gestionar, además la mayoría de ellas brindan servicios con costos monetarios elevados.
+Las principales desventajas de estas plataformas son la fuerte dependencia que generan y la poca adaptabilidad al hardware que se requiere gestionar, además, la mayoría de ellas brindan servicios con costos monetarios elevados.
 
 %----------------------------------------------------------------------------------------
 
@@ -184,7 +188,7 @@ En la actualidad existen múltiples dispositivos conversores de protocolos que p
 
 Empresas multinacionales como ser ABB, Scheider Electric, Honeywell o Siemens poseen sus propias plataformas web de gestión y protocolos de comunicación, lo que genera un sistema cerrado y dependiente de un determinado fabricante de dispositivos. Por lo antes mencionado, se hace inviable la conexión de conversores de otras marcas. 
 
-Por estos motivos, surgió la posibilidad de ofrecer un servicio de gestión web. Que contenga todos los componentes necesarios para que el usuario solo requiera de una configuración básica de conexión al servidor.  Que pueda visualizar los datos requeridos de forma remota, pudiendo generar reportes y almacenamiento de datos en breve periodo de tiempo de utilización. 
+Por estos motivos, surgió la posibilidad de ofrecer un servicio de gestión web. Que contenga todos los componentes necesarios para que el usuario solo requiera de una configuración básica de conexión al servidor.  Que pueda visualizar los datos requeridos de forma remota, pudiendo generar reportes y almacenamiento de datos en breves periodos de tiempo de utilización. 
 
 %----------------------------------------------------------------------------------------
 
