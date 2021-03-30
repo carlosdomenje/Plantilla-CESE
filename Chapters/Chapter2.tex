@@ -48,10 +48,10 @@ Al sistema se lo puede separar en tres grupos:
 %	SECTION {Protocolos}
 %----------------------------------------------------------------------------------------
 \section{Protocolos de comunicación}
-En el caso de la comunicación con un servidor remoto se requiere tener acceso a Internet y por lo tanto es necesario conectarse también con un módem que a
-su vez debe estar conectado a un proveedor de servicios de Internet (ISP, por sus siglas en inglés correspondientes a \textit{Internet Service Provider}).
+En el caso de la comunicación con un servidor remoto se requiere tener acceso a internet y por lo tanto es necesario conectarse también con un módem que a
+su vez debe estar conectado a un proveedor de servicios de internet (ISP, por sus siglas en inglés correspondientes a \textit{Internet Service Provider}).
 
-Necesariamente para poder conectarse a Internet, el conversor de protocolo Modbus a MQTT debe implementar el protocolo TCP/IP \citep{WEBSITE:15} o UDP/IP \citep{WEBSITE:16}, que determinan las características de las capas de transporte y red del estándar OSI \citep{WEBSITE:13}. La capa de aplicación, ubicada en la parte superior del modelo, es la encargada de ofrecer a las aplicaciones de usuario la posibilidad de comunicarse con otros dispositivos a través de los servicios brindados por las demás capas. Entre los protocolos de aplicación, existen múltiples como AMQP, CoAP, DDS, STOMP, MQTT y HTTP, siendo estos dos últimos los utilizados en el trabajo realizado.
+Necesariamente para poder conectarse a internet, el conversor de protocolo Modbus a MQTT debe implementar el protocolo TCP/IP \citep{WEBSITE:15} o UDP/IP \citep{WEBSITE:16}, que determinan las características de las capas de transporte y red del estándar OSI \citep{WEBSITE:13}. La capa de aplicación, ubicada en la parte superior del modelo, es la encargada de ofrecer a las aplicaciones de usuario la posibilidad de comunicarse con otros dispositivos a través de los servicios brindados por las demás capas. Entre los protocolos de aplicación, existen múltiples como AMQP, CoAP, DDS, STOMP, MQTT y HTTP, siendo estos dos últimos los utilizados en el trabajo realizado.
 
 Ambos protocolos son ampliamente utilizados para aplicaciones en la internet de las cosas.  MQTT se basa en un modelo de publicaciones y suscripciones en el que un cliente publica mensajes en un tema o tópico y todos aquellos nodos que se encuentran suscritos a ese tema reciben el mensaje publicado. MQTT es ideal para aplicaciones de IoT debido principalmente a que requiere un muy bajo ancho de banda, tiene un menor consumo de potencia que otras alternativas y además es sencillo y ligero de implementar. 
 
@@ -97,7 +97,7 @@ Ejemplos de tópicos y uso de los wildcards son provistos en la figura \ref{fig:
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.38]{./Figures/esquema-wildcard.png}
+	\includegraphics[scale=.40]{./Figures/esquema-wildcard.png}
 	\caption{Ejemplo de tópicos y uso de \textit{wildcards}.}
 	\label{fig:mqtt-wildcards}
 \end{figure}
@@ -196,7 +196,7 @@ En informática, la expresión backend hace referencia a la parte de la infraest
 En este trabajo el backend consiste en un servidor, una aplicación web y una base de datos y debe cumplir con los siguientes criterios:
 
 \begin{itemize}
-	\item Escalabilidad: hace referencia a la flexibilidad del mismo para integrar nuevas estructuras y códigos si el futuro la aplicación lo requiere.
+	\item Escalabilidad: hace referencia a la flexibilidad del mismo para integrar nuevas estructuras y códigos si en el futuro la aplicación lo requiere.
 	
 	\item Seguridad: debido a la constante interacción del backend con la base de datos, se debe hacer uso de conexiones seguras como HTTPS.
 	
@@ -289,9 +289,9 @@ Algunos comandos para el manejo de MongoDB se pueden observar en la tabla \ref{t
 		\textit{insertOne}					& Crear un documento en una colección determinada.\\	
 		\textit{count}						& Cuenta la cantidad de documentos que hay en una colección.\\	
 		\textit{drop}							& Elimina una colección de la base de datos.\\	
-		\textit{find	} 						& Se busca un documento en una colección\\
-		\textit{remove}	 					& Elimina un documento de una colección\\
-		\textit{update}						& Modifica un documento de una colección\\
+		\textit{find	} 						& Se busca un documento en una colección.\\
+		\textit{remove}	 					& Elimina un documento de una colección.\\
+		\textit{update}						& Modifica un documento de una colección.\\
 		
 		\bottomrule
 		\hline

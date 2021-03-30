@@ -448,7 +448,7 @@ Para la implementación se utilizó Angular como \textit{framework} de programac
 
 La estructura general de la plataforma consta de una pantalla de inicio donde el usuario puede iniciar sesión, o bien realizar un registro al sistema para luego poder ingresar al sistema. 
 
-En la figura \ref{fig:pantalla-login} se pueden observar la pantalla de login, mientras que la figura \ref{fig:pantalla-register} muestra la pantalla de registro de usuario. 
+En la figura \ref{fig:pantalla-login} se puede observar la pantalla de login, mientras que la figura \ref{fig:pantalla-register} muestra la pantalla de registro de usuario. 
 
 \begin{figure}[htpb]
 	\centering
@@ -592,7 +592,7 @@ export class LoginComponent {
 }
 \end{lstlisting} 
 
-Otro aspecto importante del frontend es la programación de un servicio que permita conectarse con el backend y realizar peticiones HTTP. Para el caso de la pantalla de login,  se requiere acceder a la base de datos para verificar si el email y password utilizado por el usuario son correctos y así poder acceder a la pagina principal. 
+Otro aspecto importante del frontend es la programación de un servicio que permita conectarse con el backend y realizar peticiones HTTP. Para el caso de la pantalla de login,  se requiere acceder a la base de datos para verificar si el email y password utilizado por el usuario son correctos y así poder acceder a la página principal. 
 
 El código \ref{cod:service-login} muestra la implementación de un servicio que es utilizado por el componente de login de usuario. En él puede observarse un método llamado loginUsuario el cual realiza una petición POST al backend.  Luego espera una respuesta por parte de la petición para verificar si la misma es correcta.  Por otro lado, se programó un método crearUsuario el cual crea un nuevo usuario en la base de datos, utilizando las funciones CRUD programadas en el backend. 
 
@@ -708,6 +708,8 @@ Si el usuario requiere realizar cambios en el dispositivo y editar parámetros c
 
 Para la visualización de datos históricos de dispositivos se utilizó la librería para Angular echarts \citep{WEBSITE:43}. Esta amplia librería permite la utilización de gráficos para mostrar datos históricos de mediciones de los dispositivos que almacenan datos en MongoDB. En la figura \ref{fig:echart-grafica} puede observarse las características principales que ofrece el componente para realizar un gráfico y las opciones correspondientes en la figura \ref{fig:echart-grafica-opciones}.
 
+\newpage
+
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.60]{./Figures/echart-grafica.png}
@@ -715,14 +717,12 @@ Para la visualización de datos históricos de dispositivos se utilizó la libre
 	\label{fig:echart-grafica}
 \end{figure}
 
-
 \footnotetext{Fragmento de imagen tomada de \url{https://echarts.apache.org/en/tutorial.html}}
-
 
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.60]{./Figures/echart-grafica-options.png}
+	\includegraphics[scale=.55]{./Figures/echart-grafica-options.png}
 	\caption[Opciones de configuración de echarts]{Ilustración de opciones de configuración de gráfico utilizando echarts\protect\footnotemark.}
 	\label{fig:echart-grafica-opciones}
 \end{figure}
@@ -730,7 +730,9 @@ Para la visualización de datos históricos de dispositivos se utilizó la libre
 \footnotetext{Fragmento de imagen tomada de \url{https://echarts.apache.org/en/tutorial.html}}
 
 
+
 \newpage
+
 
 La figura \ref{fig:device-grafica} muestra el gráfico de mediciones históricas que corresponden a un sensor de temperatura que utiliza un dispositivo conversor de datos Modbus a MQTT.
 
@@ -767,7 +769,7 @@ Por otro lado la figura \ref{fig:pantalla-tablet} muestra la pantalla adaptada a
 \end{figure}
 
 \pagebreak
-En ultima instancia, la figura \ref{fig:pantalla-celu} muestra la pantalla adaptada para celulares y se aprecia el listado de dispositivos en sola columna y la barra lateral oculta para poder desplegarla a través de un botón.
+En última instancia, la figura \ref{fig:pantalla-celu} muestra la pantalla adaptada para celulares y se aprecia el listado de dispositivos en una sola columna y la barra lateral oculta para poder desplegarla a través de un botón.
 
 \begin{figure}[htpb]
 	\centering
